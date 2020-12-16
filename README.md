@@ -6,8 +6,9 @@
 
 <!-- I took on a challenge to completed 6 Projects in 6 Streams while streaming everything on [Twitch](https://twitch.tv/mrdemonwolf). -->
 
-1. [Countdown Timer]()
+1. [Countdown Timer](https://nuxt-timer.surge.sh/)
 
+✅ countdown
 - be able to set time/date to countdown to
 - stop timer
 - start timer
