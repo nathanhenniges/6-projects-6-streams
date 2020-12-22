@@ -2,10 +2,12 @@
   <div>
     <h1 class="text-5xl text-center text-white font-roboto">Countdown Timer</h1>
     <div
-      class="inline-grid items-center grid-cols-4 text-8xl p-15 gap-x-6 justify-items-center"
+      class="inline-grid items-center grid-cols-4 text-8xl p-15 gap-x-6 justify-items-center sm:w-full"
     >
-      <div class="col-span-1">
-        <span class="font-extrabold text-primary-500 font-montserrat">
+      <div class="col-span-4 sm:col-span-2 md:col-span-1">
+        <span
+          class="font-extrabold text-primary-500 font-montserrat tabular-nums tnum-feature-setting"
+        >
           {{ days | two_digits }}
         </span>
         <span
@@ -13,8 +15,10 @@
           >Days</span
         >
       </div>
-      <div class="col-span-1">
-        <span class="font-extrabold text-primary-500 font-montserrat">
+      <div class="col-span-4 sm:col-span-2 md:col-span-1">
+        <span
+          class="font-extrabold text-primary-500 font-montserrat tabular-nums tnum-feature-setting"
+        >
           {{ hours | two_digits }}</span
         >
         <span
@@ -22,8 +26,10 @@
           >Hours</span
         >
       </div>
-      <div class="col-span-1">
-        <span class="font-extrabold text-primary-500 font-montserrat">
+      <div class="col-span-4 sm:col-span-2 md:col-span-1">
+        <span
+          class="font-extrabold text-primary-500 font-montserrat tabular-nums tnum-feature-setting"
+        >
           {{ minutes | two_digits }}</span
         >
         <span
@@ -31,8 +37,10 @@
           >Minutes
         </span>
       </div>
-      <div class="col-span-1">
-        <span class="font-extrabold text-primary-500 font-montserrat">
+      <div class="col-span-4 sm:col-span-2 md:col-span-1">
+        <span
+          class="font-extrabold text-primary-500 font-montserrat tabular-nums tnum-feature-setting"
+        >
           {{ seconds | two_digits }}</span
         >
         <span
@@ -55,10 +63,6 @@ export default {
   },
   data() {
     return {
-      timer: {
-        days: '00',
-        hours: '00',
-      },
       now: Math.trunc(new Date().getTime() / 1000),
     }
   },

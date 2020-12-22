@@ -4,6 +4,9 @@
  ** Docs: https://tailwindcss.com/docs/configuration
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
+
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   theme: {
     // compatible with @nuxtjs/color-mode
@@ -41,7 +44,17 @@ module.exports = {
     borderColor: ['hover', 'responsive'],
     textColor: ['hover', 'responsive', 'disabled'],
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      const newUtilities = {
+        '.tnum-feature-setting': {
+          'font-feature-settings': '"tnum"',
+        },
+      }
+
+      addUtilities(newUtilities, ['responsive', 'hover'])
+    }),
+  ],
 
   purge: {
     // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
