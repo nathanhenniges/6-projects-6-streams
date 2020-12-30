@@ -11,7 +11,11 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'A simple Nuxt and Tailwind based Countdown Timer',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
@@ -45,14 +49,13 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: ['@nuxtjs/dayjs'],
 
+  /*
+   ** dayjs configuration
+   */
+  dayjs: {
+    plugins: ['localizedFormat', 'utc'],
+  },
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
-
-  dayjs: {
-    locales: ['en', 'ja'],
-    defaultLocale: 'en',
-    plugins: [
-      'utc', // import 'dayjs/plugin/utc'
-    ], // Your Day.js plugin
-  },
 }

@@ -49,6 +49,17 @@
         </span>
       </div>
     </div>
+    <div
+      class="inline-grid items-center grid-cols-4 mt-5 text-8xl p-15 gap-x-2 justify-items-center sm:w-full"
+    >
+      <button
+        type="button"
+        class="col-span-4 px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700"
+        @click="resetCountdown"
+      >
+        Reset
+      </button>
+    </div>
   </div>
 </template>
 
@@ -56,19 +67,19 @@
 export default {
   props: {
     to: {
-      type: String,
+      type: Object,
       required: true,
-      default: '2020-12-30 24:00:00',
+      default: () => this.$dayjs.utc('2020-12-31 24:00:00'),
     },
   },
   data() {
     return {
-      now: Math.trunc(new Date().getTime() / 1000),
+      now: Math.trunc(this.$dayjs.utc() / 1000),
     }
   },
   computed: {
     toInnMilliSeconds() {
-      return Math.trunc(Date.parse(this.to) / 1000)
+      return Math.trunc(this.$dayjs.utc(this.to) / 1000)
     },
     seconds() {
       return (this.toInnMilliSeconds - this.now) % 60
@@ -84,9 +95,20 @@ export default {
     },
   },
   mounted() {
-    window.setInterval(() => {
-      this.now = Math.trunc(new Date().getTime() / 1000)
+    const countdown = window.setInterval(() => {
+      this.now = Math.trunc(this.$dayjs.utc() / 1000)
     }, 1000)
+    this.$on('hook:destroyed', () => {
+      clearInterval(countdown)
+    })
+  },
+  methods: {
+    async resetCountdown() {
+      try {
+        await this.$store.dispatch('countdown/RESET_COUNTDOWN')
+        await this.$store.commit('countdown/SET_SHOW_COUNTDOWN', false)
+      } catch (e) {}
+    },
   },
 }
 </script>

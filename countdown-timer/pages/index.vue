@@ -1,7 +1,10 @@
 <template>
   <div class="bg-gray-900">
     <div class="flex items-center justify-center h-screen">
-      <Countdown v-if="$store.state.countdown.showCountdown" />
+      <Countdown
+        v-if="$store.state.countdown.showCountdown"
+        :to="$store.state.countdown.to"
+      />
       <Control v-else />
     </div>
   </div>
