@@ -95,7 +95,16 @@ export default {
     },
   },
   mounted() {
-    const countdown = window.setInterval(() => {
+    const countdown = window.setInterval(async () => {
+      if (
+        this.days === 0 &&
+        this.hours === 0 &&
+        this.minutes === 0 &&
+        this.seconds === 0
+      ) {
+        alert('Countdown Over')
+        return await this.$store.dispatch('countdown/RESET_COUNTDOWN')
+      }
       this.now = Math.trunc(this.$dayjs.utc() / 1000)
     }, 1000)
     this.$on('hook:destroyed', () => {
