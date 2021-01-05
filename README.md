@@ -1,16 +1,14 @@
 # 6 Projects in 6 Streams
 
-<!-- YouTube video is now Live, click below: -->
+I took on a challenge to completed 6 Projects in 6 Streams while streaming everything on [Twitch](https://twitch.tv/mrdemonwolf).
 
-<!-- [![6Projects6Streams](6Projects6Streams.png)](https://www.youtube.com/) -->
+1. [Countdown Timer](https://nuxt-timer.surge.sh/)
 
-<!-- I took on a challenge to completed 6 Projects in 6 Streams while streaming everything on [Twitch](https://twitch.tv/mrdemonwolf). -->
-
-1. [Countdown Timer]()
-
-- be able to set time/date to countdown to
-- stop timer
-- start timer
+✅ countdown
+✅ be able to set time/date to countdown to
+✅ reset timer
+✅ start timer
+✅ Error Toasts
 
 1. [Quiz App]()
 
