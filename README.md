@@ -14,13 +14,13 @@ I took on a challenge to completed 6 Projects in 6 Streams while streaming every
 
 ✅ Error Toasts
 
-1. [Quiz App]()
+2. [Quiz App](https://nuxt-quiz.surge.sh)
 
 - questions from obj
 - select answer
 - at the end show score
 
-1. [Notes App]()
+3. [Notes App]()
 
 - CRUD Note (no api just local)
   - Add Note
@@ -29,7 +29,7 @@ I took on a challenge to completed 6 Projects in 6 Streams while streaming every
 - be able to support basic markdown
 - localStorage
 
-1. [ToDo App]()
+4. [ToDo App]()
 
 - CRUD Todo (no api just local)
   - Add Todo to list
@@ -37,14 +37,14 @@ I took on a challenge to completed 6 Projects in 6 Streams while streaming every
   - Mark Todo from list as complate
 - localStorage
 
-1. [Password Generator]()
+5. [Password Generator]()
 
 - numbers
 - letters
 - symbols
 - copy to clipboard
 
-1. [Weather App]()
+6. [Weather App]()
 
 - enter location
 - get weather
