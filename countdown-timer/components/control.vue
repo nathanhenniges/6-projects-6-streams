@@ -174,6 +174,14 @@ export default {
   methods: {
     async toggleShowCountdown() {
       try {
+        if (
+          this.date.day === '00' &&
+          this.date.hour === '00' &&
+          this.date.minute === '00' &&
+          this.date.second === '00'
+        ) {
+          return this.$toast.error('You MUST pick a date/time to countdown to!')
+        }
         const to = this.$dayjs()
           .add(this.date.day, 'day')
           .add(this.date.hour, 'hour')
@@ -182,8 +190,9 @@ export default {
 
         await this.$store.dispatch('countdown/START_COUNTDOWN', to)
         await this.$store.dispatch('countdown/TOGGLE_SHOW_COUNTDOWN')
+        this.$toast.error('Started countdown')
       } catch (e) {
-        console.log(e)
+        this.$toast.error('Oops...Something went wrong')
       }
     },
     async resetCountdown() {
@@ -191,7 +200,7 @@ export default {
         await this.$store.dispatch('countdown/RESET_COUNTDOWN')
         await this.$store.dispatch('countdown/SET_SHOW_COUNTDOWN', false)
       } catch (e) {
-        console.log(e)
+        this.$toast.error('Oops...Something went wrong')
       }
     },
   },

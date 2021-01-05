@@ -47,7 +47,7 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/dayjs'],
+  modules: ['@nuxtjs/dayjs', '@nuxtjs/toast'],
 
   /*
    ** dayjs configuration

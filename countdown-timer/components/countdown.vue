@@ -116,7 +116,9 @@ export default {
       try {
         await this.$store.dispatch('countdown/RESET_COUNTDOWN')
         await this.$store.commit('countdown/SET_SHOW_COUNTDOWN', false)
-      } catch (e) {}
+      } catch (e) {
+        this.$toast.error('Oops...Something went wrong')
+      }
     },
   },
 }
