@@ -5,9 +5,13 @@ I took on a challenge to completed 6 Projects in 6 Streams while streaming every
 1. [Countdown Timer](https://nuxt-timer.surge.sh/)
 
 ✅ countdown
+
 ✅ be able to set time/date to countdown to
+
 ✅ reset timer
+
 ✅ start timer
+
 ✅ Error Toasts
 
 1. [Quiz App]()
