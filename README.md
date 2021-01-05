@@ -8,6 +8,7 @@ I took on a challenge to completed 6 Projects in 6 Streams while streaming every
 ✅ be able to set time/date to countdown to
 ✅ reset timer
 ✅ start timer
+✅ Error Toasts
 
 1. [Quiz App]()
 
