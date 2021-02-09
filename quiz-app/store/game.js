@@ -18,6 +18,8 @@ export const state = () => ({
       answers: ['WordPress', 'Joomla', 'GravCMS', 'Drupal'],
     },
   ],
+  score: 0,
+  ended: false,
 })
 
 export const actions = {
@@ -34,10 +36,15 @@ export const mutations = {
   SET_STATUS(state, status) {
     return (state.status = status)
   },
+  SET_ENDED(state, ended) {
+    return (state.ended = ended)
+  },
   SET_CURRENT_QUSTION(state, currentQustion) {
     return (state.currentQustion = currentQustion)
   },
-
+  ADD_TO_SCORE(state) {
+    return state.score++
+  },
   GO_TO_NEXT_QUSTION(state) {
     return state.currentQustion++
   },
@@ -49,5 +56,8 @@ export const getters = {
   },
   QUSTIONS: (state) => {
     return state.qustions
+  },
+  SCORE: (state) => {
+    return state.score
   },
 }

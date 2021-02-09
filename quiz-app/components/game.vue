@@ -40,9 +40,12 @@ export default {
 
       if (isRight) {
         if (this.$store.state.game.currentQustion === qustionsLength) {
+          await this.$store.commit('game/ADD_TO_SCORE')
           await this.$store.dispatch('game/RESET_GAME')
-          alert('YOU WON!!!')
+          await this.$store.commit('game/SET_ENDED', true)
+          this.$router.push('/won')
         } else {
+          await this.$store.commit('game/ADD_TO_SCORE')
           await this.$store.commit('game/GO_TO_NEXT_QUSTION')
         }
       } else {
