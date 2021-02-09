@@ -17,7 +17,9 @@ I took on a challenge to completed 6 Projects in 6 Streams while streaming every
 2. [Quiz App](https://nuxt-quiz.surge.sh)
 
 ✅ questions from obj in store
+
 ✅ select answer
+
 ✅ at the end show score
 
 3. [Notes App]()
